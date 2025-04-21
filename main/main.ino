@@ -6,6 +6,7 @@
 #define OPEN_ANGLE 90
 #define CLOSE_ANGLE 0
 #define PUSHBUTTON_PIN 13
+#define DELAY_TIME 5000
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
@@ -27,7 +28,7 @@ void loop() {
   if (buttonState == LOW && !isRotating) {
     if (isClosed) {
       openLid();
-    } else {
+      delay(DELAY_TIME); 
       closeLid();
     }
   }
